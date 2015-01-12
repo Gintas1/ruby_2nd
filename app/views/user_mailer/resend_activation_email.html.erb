@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>
+  To activate your account input the following code to
+  activation field that you can find in your profile page:
+  <%= @token %>.
+</p>
+<p>
+  Or follow the link:
+  http://localhost:3000/activate?username=<%= @user.username %>&token=<%= @token %>.
+</p>
+<p>Have a great day!</p>
+</body>
+</html>

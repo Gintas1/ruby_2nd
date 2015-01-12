@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+<div class = 'col-md-8'>
+  <div class = 'jumbotron'>
+    <p>
+      <strong>Username:</strong>
+      <%= @user.username %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+
+    <p>
+      <strong>Balance:</strong>
+      <%= @user.balance %>
+    </p>
+
+    <p>
+      <strong>Activation status:</strong>
+      <% if @user.active? %>
+        <t class='active'>
+          Active
+        </t>
+      <% else %>
+        <t class='inactive'>
+          Inactive
+        </t>
+    <% end %>
+    </p>
+
+    <p>
+      <strong>Account status:</strong>
+      <% if @user.admin? %>
+          <t>
+            Admin
+          </t>
+      <% else %>
+          <t>
+            User
+          </t>
+      <% end %>
+    </p>
+
+  </div>
+</div>
+<div class = 'col-md-4'>
+  <div class = 'jumbotron'>
+    <button class="btn btn-success btn-block">Cart</button> <br>
+    <button class="btn btn-success btn-block">messages</button> <br>
+    <% if !@user.active %>
+      <%= button_to 'Activate', activation_user_path(@user.id),{class: 'btn btn-success btn-block'} %> <br>
+    <% end %>
+  </div>
+</div>

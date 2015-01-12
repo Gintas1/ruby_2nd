@@ -1,0 +1,10 @@
+<div class='col-md-4 col-md-offset-4 panel panel-default'>
+  <div class='panel-body'>
+    <%= form_tag({controller: 'users', action: 'activate'}, method: :get) do %>
+      <%= text_field_tag 'token', nil, {placeholder: 'Activation code', class: 'form-control'}%> <br>
+      <%= hidden_field_tag 'username' , @user.username %>
+      <%= submit_tag 'Activate', {class: 'btn btn-success btn-block', name: nil} %><br>
+    <% end %>
+    <%= button_to 'Resend activation code', resend_path, {class: 'btn btn-success btn-block'} %>
+  </div>
+</div>

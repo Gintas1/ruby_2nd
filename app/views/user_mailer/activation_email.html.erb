@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Welcome , <%= @user.username %></h1>
+<p>
+  You have successfully registered to our website,
+  therefor we are sending you this activation email.<br>
+</p>
+<p>
+  To activate your account input the following code to
+  activation field that you can find in your profile page:
+  <%= @token %>.
+</p>
+<p>
+  Or follow the link:
+  http://localhost:3000/activate?username=<%= @user.username %>&token=<%= @token %>.
+</p>
+<p>Thanks for joining and have a great day!</p>
+</body>
+</html>

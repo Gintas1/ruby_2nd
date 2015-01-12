@@ -1,0 +1,19 @@
+<%= form_for(user) do |f| %>
+  <div class='col-md-6 col-md-offset-3 panel panel-default'>
+    <div class='panel-body'>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+      <h1>Sign in</h1>
+      <%= form_for(:user, url: users_path) do |f| %>
+        <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %><br>
+        <%= f.text_field :email, class: 'form-control', placeholder: 'Email'%> <br>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %><br>
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password' %> <br>
+        <%= f.submit 'Register', class: 'btn btn-success btn-block' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

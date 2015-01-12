@@ -1,0 +1,11 @@
+# db migration
+class CreateCarts < ActiveRecord::Migration
+  def change
+    create_table :carts do |t|
+      t.references :user, index: true
+      t.integer :total
+
+      t.timestamps
+    end
+  end
+end

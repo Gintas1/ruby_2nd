@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - 'social_network.rb'
+
+
+
+AllCops:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
